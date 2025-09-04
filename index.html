@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hyperverge | RBI‑Compliant Video KYC</title>
+  <meta name="description" content="Hyperverge's RBI‑compliant, AI‑powered Video KYC for secure, seamless, and efficient customer onboarding for Banks, NBFCs, Fintech, and Insurance." />
+  <meta name="robots" content="index,follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Tailwind via CDN for rapid prototyping; swap to compiled CSS in production -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            hvnavy: '#0A1128',
+            hvbg: '#F8F9FA',
+            hvgreen: '#28A745',
+            hvblue: '#007BFF',
+          },
+          fontFamily: {
+            heading: ['Montserrat', 'ui-sans-serif', 'system-ui'],
+            body: ['Open Sans', 'ui-sans-serif', 'system-ui']
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(10,17,40,0.08)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root{
+      --hv-navy:#0A1128; --hv-bg:#F8F9FA; --hv-green:#28A745; --hv-blue:#007BFF;
+    }
+    html{scroll-behavior:smooth}
+    /* Simple fade-in */
+    .fade-in{opacity:0; transform:translateY(8px); animation:fade .5s ease-out forwards}
+    @keyframes fade{to{opacity:1; transform:none}}
+    /* Hash-router screens */
+    .screen{display:none}
+    .screen.active{display:block}
+    /* High-contrast focus */
+    :focus-visible{outline:3px solid var(--hv-blue); outline-offset:2px}
+  </style>
+</head>
+<body class="bg-hvbg text-slate-800 font-body">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#/" class="flex items-center gap-3" aria-label="Hyperverge home">
+          <div class="w-9 h-9 rounded-xl bg-hvnavy text-white grid place-items-center font-heading font-bold">HV</div>
+          <span class="font-heading font-extrabold text-hvnavy text-lg">Hyperverge</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 font-medium">
+          <a class="hover:text-hvblue" href="#/how-it-works">How it Works</a>
+          <a class="hover:text-hvblue" href="#/features">Features</a>
+          <a class="hover:text-hvblue" href="#/industries">Industries</a>
+          <a class="hover:text-hvblue" href="#/resources">Resources</a>
+          <a class="hover:text-hvblue" href="#/about-us">About</a>
+          <a class="hover:text-hvblue" href="#/contact">Contact</a>
+          <a class="px-4 py-2 rounded-xl text-white bg-hvgreen hover:brightness-110 shadow-soft" href="#/request-demo">Request a Demo</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden p-2 rounded-lg border border-slate-200" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+      <div id="mobileMenu" class="md:hidden hidden pb-4" role="navigation">
+        <div class="grid gap-2">
+          <a class="px-3 py-2 rounded-lg hover:bg-slate-50" href="#/how-it-works">How it Works</a>
+          <a class="px-3 py-2 rounded-lg hover:bg-slate-50" href="#/features">Features</a>
+          <a class="px-3 py-2 rounded-lg hover:bg-slate-50" href="#/industries">Industries</a>
+          <a class="px-3 py-2 rounded-lg hover:bg-slate-50" href="#/resources">Resources</a>
+          <a class="px-3 py-2 rounded-lg hover:bg-slate-50" href="#/about-us">About</a>
+          <a class="px-3 py-2 rounded-lg hover:bg-slate-50" href="#/contact">Contact</a>
+          <a class="px-3 py-2 rounded-lg text-white bg-hvgreen rounded-xl" href="#/request-demo">Request a Demo</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Screens (Hash Router) -->
+  <main class="min-h-[70vh]">
+    <!-- HOME / Landing -->
+    <section id="home" class="screen active">
+      <!-- Hero -->
+      <div class="bg-gradient-to-b from-white to-hvbg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-10 items-center">
+          <div class="fade-in">
+            <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-hvnavy leading-tight">The Future of Secure and Seamless Customer Onboarding is Here: <span class="text-hvblue">Video KYC</span> by Hyperverge</h1>
+            <p class="mt-5 text-lg text-slate-600">Onboard customers in minutes, not days, with our RBI‑compliant, AI‑powered Video KYC solution. Eliminate fraud, reduce operational costs, and provide a world‑class customer experience.</p>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="#/request-demo" class="px-6 py-3 rounded-xl bg-hvgreen text-white font-semibold shadow-soft hover:scale-[1.01] transition">Request a Demo</a>
+              <a href="#/how-it-works" class="px-6 py-3 rounded-xl border border-hvblue text-hvblue font-semibold hover:bg-blue-50">Learn More</a>
+            </div>
+            <div class="mt-6 flex items-center gap-4 text-sm text-slate-500">
+              <span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-hvgreen"></span> RBI compliant</span>
+              <span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-hvgreen"></span> ISO ready</span>
+              <span class="inline-flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-hvgreen"></span> 24/7 Support</span>
+            </div>
+          </div>
+          <div class="fade-in lg:delay-100">
+            <!-- Hero image placeholder -->
+            <div class="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-soft bg-[url('https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1400&auto=format&fit=crop')] bg-cover bg-center">
+              <div class="absolute inset-0 bg-gradient-to-tr from-hvnavy/60 via-hvnavy/20 to-transparent"></div>
+              <!-- subtle security icons -->
+              <div class="absolute bottom-4 left-4 right-4 grid grid-cols-3 gap-3">
+                <div class="backdrop-blur bg-white/30 rounded-xl p-3 text-white">🔒 Secure</div>
+                <div class="backdrop-blur bg-white/30 rounded-xl p-3 text-white">🛡️ Compliant</div>
+                <div class="backdrop-blur bg-white/30 rounded-xl p-3 text-white">⚡ Fast</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Why Choose -->
+      <section class="py-12 lg:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="font-heading text-2xl sm:text-3xl font-bold text-hvnavy">Why Choose Hyperverge for Video KYC?</h2>
+          <div class="mt-8 grid md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-2xl p-6 shadow-soft">
+              <h3 class="font-heading font-semibold text-lg">Security & Compliance</h3>
+              <p class="mt-2 text-slate-600">RBI/TRAI aligned workflows, advanced fraud prevention, end‑to‑end encryption, secure data storage, and audit‑ready logs.</p>
+              <ul class="mt-3 text-sm text-slate-600 list-disc pl-5">
+                <li>Regulatory compliant flows</li>
+                <li>Anti‑spoofing & risk checks</li>
+                <li>PII protection by design</li>
+              </ul>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-soft">
+              <h3 class="font-heading font-semibold text-lg">Efficiency & Cost Reduction</h3>
+              <p class="mt-2 text-slate-600">AI‑assisted verifications deliver up to 99.5% accuracy and reduce operational costs by as much as 80% with elastic scaling.</p>
+              <ul class="mt-3 text-sm text-slate-600 list-disc pl-5">
+                <li>Queue optimization</li>
+                <li>Agent productivity tools</li>
+                <li>Cloud‑native autoscale</li>
+              </ul>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-soft">
+              <h3 class="font-heading font-semibold text-lg">Delightful Customer Experience</h3>
+              <p class="mt-2 text-slate-600">Under‑5‑minute onboarding, any device, anywhere. Supports low bandwidth, vernacular UI, and accessible design.</p>
+              <ul class="mt-3 text-sm text-slate-600 list-disc pl-5">
+                <li>Sub‑5 minute completion</li>
+                <li>Multi‑language UX</li>
+                <li>Offline friendly fallbacks</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Logos / Trust -->
+      <section class="py-8 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p class="text-center text-slate-500">Trusted by leading financial institutions</p>
+          <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-center opacity-80">
+            <div class="h-10 bg-slate-100 rounded" aria-label="Client logo placeholder"></div>
+            <div class="h-10 bg-slate-100 rounded"></div>
+            <div class="h-10 bg-slate-100 rounded"></div>
+            <div class="h-10 bg-slate-100 rounded"></div>
+            <div class="h-10 bg-slate-100 rounded"></div>
+            <div class="h-10 bg-slate-100 rounded"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section class="py-12 lg:py-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 class="font-heading text-2xl sm:text-3xl font-bold text-hvnavy">Ready to Revolutionize Your Onboarding Process?</h2>
+          <p class="mt-3 text-slate-600">Join the leading financial institutions that trust Hyperverge for their Video KYC needs.</p>
+          <a href="#/request-demo" class="inline-block mt-6 px-8 py-3 rounded-xl bg-hvgreen text-white font-semibold shadow-soft hover:scale-[1.01] transition">Get Started Today</a>
+        </div>
+      </section>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="screen">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+        <h1 class="font-heading text-3xl font-extrabold text-hvnavy">Our Simple 4‑Step Video KYC Process</h1>
+        <div class="mt-10 grid md:grid-cols-4 gap-6">
+          <div class="bg-white rounded-2xl p-6 shadow-soft">
+            <div class="text-3xl">1️⃣</div>
+            <h3 class="font-heading font-semibold mt-2">Pre‑qualification</h3>
+            <p class="text-slate-600 text-sm mt-1">Customer initiates flow, gives basics; consent captured per DPDP.</p>
+          </div>
+          <div class="bg-white rounded-2xl p-6 shadow-soft">
+            <div class="text-3xl">2️⃣</div>
+            <h3 class="font-heading font-semibold mt-2">Smart Queuing</h3>
+            <p class="text-slate-600 text-sm mt-1">Intelligent routing to available agents; auto‑retry on drop.</p>
+          </div>
+          <div class="bg-white rounded-2xl p-6 shadow-soft">
+            <div class="text-3xl">3️⃣</div>
+            <h3 class="font-heading font-semibold mt-2">The Video Call</h3>
+            <p class="text-slate-600 text-sm mt-1">Live verification with liveness, face‑match and document checks.</p>
+          </div>
+          <div class="bg-white rounded-2xl p-6 shadow-soft">
+            <div class="text-3xl">4️⃣</div>
+            <h3 class="font-heading font-semibold mt-2">Post‑call Analytics</h3>
+            <p class="text-slate-600 text-sm mt-1">AI flags anomalies; audit trail & reports for compliance.</p>
+          </div>
+        </div>
+        <div class="mt-12">
+          <a href="#/request-demo" class="px-6 py-3 rounded-xl bg-hvgreen text-white font-semibold shadow-soft">Request a Demo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="screen">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+        <h1 class="font-heading text-3xl font-extrabold text-hvnavy">Powered by Cutting‑Edge Technology</h1>
+        <div class="mt-10 grid md:grid-cols-2 gap-8 items-start">
+          <div class="bg-white rounded-2xl p-6 shadow-soft">
+            <h3 class="font-heading font-semibold text-lg">AI & Machine Learning</h3>
+            <ul class="mt-3 text-slate-700 list-disc pl-5">
+              <li>Liveness Detection (anti‑spoofing)</li>
+              <li>Face Match (up to 99% accuracy)</li>
+              <li>OCR for IDs (Aadhaar, PAN, DL, Voter ID)</li>
+              <li>Fraud risk scoring with explainability</li>
+            </ul>
+          </div>
+          <div class="bg-white rounded-2xl p-6 shadow-soft">
+            <h3 class="font-heading font-semibold text-lg">Seamless Integration</h3>
+            <ul class="mt-3 text-slate-700 list-disc pl-5">
+              <li>Simple REST APIs & SDKs</li>
+              <li>Cross‑platform (web, Android, iOS)</li>
+              <li>99.9% uptime & 24/7 support</li>
+              <li>Granular roles & audit logs</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-12 grid md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-2xl p-6 shadow-soft">
+            <h4 class="font-heading font-semibold">Compliance Badges</h4>
+            <div class="mt-3 flex flex-wrap gap-3">
+              <span class="px-3 py-1 rounded-full bg-hvbg border">RBI Compliant</span>
+              <span class="px-3 py-1 rounded-full bg-hvbg border">ISO Certified</span>
+              <span class="px-3 py-1 rounded-full bg-hvbg border">DPDP Ready</span>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-6 shadow-soft">
+            <h4 class="font-heading font-semibold">Testimonials</h4>
+            <blockquote class="mt-2 text-slate-700 italic">“Hyperverge's Video KYC reduced our drop‑off by 30% and ensured full compliance.” — Jane Doe, Head of Digital, ABC Bank</blockquote>
+          </div>
+          <div class="bg-white rounded-2xl p-6 shadow-soft">
+            <h4 class="font-heading font-semibold">Client Logos</h4>
+            <div class="mt-3 grid grid-cols-3 gap-3">
+              <div class="h-8 bg-slate-100 rounded"></div>
+              <div class="h-8 bg-slate-100 rounded"></div>
+              <div class="h-8 bg-slate-100 rounded"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INDUSTRIES -->
+    <section id="industries" class="screen">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+        <h1 class="font-heading text-3xl font-extrabold text-hvnavy">Built for Regulated Industries</h1>
+        <div class="mt-10 grid md:grid-cols-2 gap-8">
+          <div class="bg-white rounded-2xl p-6 shadow-soft">
+            <h3 class="font-heading font-semibold">Banking</h3>
+            <p class="mt-2 text-slate-600">Accelerate CASA, cards, and loans with compliant video verification, strong risk controls, and smooth CX.</p>
+          </div>
+          <div class="bg-white rounded-2xl p-6 shadow-soft">
+            <h3 class="font-heading font-semibold">Fintech & NBFC</h3>
+            <p class="mt-2 text-slate-600">Scale up onboarding for BNPL, lending, wallets—reduce fraud and operational costs with automation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESOURCES -->
+    <section id="resources" class="screen">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+        <h1 class="font-heading text-3xl font-extrabold text-hvnavy">Resources</h1>
+        <div class="mt-8 grid lg:grid-cols-2 gap-8 items-start">
+          <article class="bg-white rounded-2xl p-6 shadow-soft">
+            <h3 class="font-heading font-semibold">Webinar: Building RBI‑Compliant Video KYC</h3>
+            <div class="mt-3 aspect-video rounded-xl overflow-hidden">
+              <!-- Replace src with the provided YouTube video URL -->
+              <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video KYC Webinar" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </article>
+          <aside class="grid gap-6">
+            <a class="block bg-white rounded-2xl p-6 shadow-soft" href="#" aria-disabled="true">
+              <h4 class="font-heading font-semibold">Case Study (PDF)</h4>
+              <p class="text-sm text-slate-600">How a top bank cut drop‑offs by 30% with Hyperverge Video KYC.</p>
+            </a>
+            <a class="block bg-white rounded-2xl p-6 shadow-soft" href="#" aria-disabled="true">
+              <h4 class="font-heading font-semibold">Blog</h4>
+              <p class="text-sm text-slate-600">Designing low‑bandwidth Video KYC experiences for Bharat.</p>
+            </a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="screen">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+        <h1 class="font-heading text-3xl font-extrabold text-hvnavy">About Hyperverge</h1>
+        <p class="mt-4 max-w-3xl text-slate-700">Hyperverge builds AI‑powered identity and verification solutions that help financial institutions onboard customers securely and efficiently. Our mission is to make digital trust fast, accessible, and compliant—at scale.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="screen">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+        <h1 class="font-heading text-3xl font-extrabold text-hvnavy">Contact Us</h1>
+        <p class="mt-2 text-slate-600">We'd love to hear from you. Fill in the form and our team will reach out.</p>
+        <form id="contactForm" class="mt-8 grid gap-4 bg-white p-6 rounded-2xl shadow-soft" novalidate>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium">Name</label>
+              <input required name="name" class="mt-1 w-full rounded-xl border px-3 py-2" placeholder="Full name" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium">Company</label>
+              <input required name="company" class="mt-1 w-full rounded-xl border px-3 py-2" placeholder="Organization" />
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium">Email</label>
+              <input required type="email" name="email" class="mt-1 w-full rounded-xl border px-3 py-2" placeholder="name@company.com" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium">Phone</label>
+              <input required name="phone" pattern="[0-9+\-() ]{7,}" class="mt-1 w-full rounded-xl border px-3 py-2" placeholder="Phone" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium">Industry</label>
+            <select required name="industry" class="mt-1 w-full rounded-xl border px-3 py-2">
+              <option value="">Select an industry</option>
+              <option>Banking</option>
+              <option>NBFC</option>
+              <option>Fintech</option>
+              <option>Insurance</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium">Message</label>
+            <textarea name="message" rows="4" class="mt-1 w-full rounded-xl border px-3 py-2" placeholder="Tell us about your use case"></textarea>
+          </div>
+          <div class="flex items-center justify-between gap-3">
+            <div class="text-xs text-slate-500">By submitting, you agree to our privacy policy.</div>
+            <button class="px-6 py-3 rounded-xl bg-hvblue text-white font-semibold">Send Message</button>
+          </div>
+          <p id="contactStatus" class="text-sm"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- REQUEST DEMO -->
+    <section id="demo" class="screen">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+        <h1 class="font-heading text-3xl font-extrabold text-hvnavy">Request a Demo</h1>
+        <p class="mt-2 text-slate-600">See Hyperverge Video KYC in action. Share your details and our solutions team will schedule a walkthrough.</p>
+        <form id="demoForm" class="mt-8 grid gap-4 bg-white p-6 rounded-2xl shadow-soft" novalidate>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium">Name</label>
+              <input required name="name" class="mt-1 w-full rounded-xl border px-3 py-2" placeholder="Full name" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium">Company</label>
+              <input required name="company" class="mt-1 w-full rounded-xl border px-3 py-2" placeholder="Organization" />
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium">Email</label>
+              <input required type="email" name="email" class="mt-1 w-full rounded-xl border px-3 py-2" placeholder="name@company.com" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium">Phone</label>
+              <input required name="phone" pattern="[0-9+\-() ]{7,}" class="mt-1 w-full rounded-xl border px-3 py-2" placeholder="Phone" />
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium">Industry</label>
+              <select required name="industry" class="mt-1 w-full rounded-xl border px-3 py-2">
+                <option value="">Select</option>
+                <option>Banking</option>
+                <option>NBFC</option>
+                <option>Fintech</option>
+                <option>Insurance</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium">Preferred Time</label>
+              <input name="time" class="mt-1 w-full rounded-xl border px-3 py-2" placeholder="e.g., Weekdays 2–4pm IST" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium">Message</label>
+            <textarea name="message" rows="4" class="mt-1 w-full rounded-xl border px-3 py-2" placeholder="Goals, volume, timelines..."></textarea>
+          </div>
+          <div class="flex items-center justify-between gap-3">
+            <div class="text-xs text-slate-500">We reply within 1 business day.</div>
+            <button class="px-6 py-3 rounded-xl bg-hvgreen text-white font-semibold">Request Demo</button>
+          </div>
+          <p id="demoStatus" class="text-sm"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-100 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid md:grid-cols-3 gap-8 items-start">
+        <div>
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-hvnavy text-white grid place-items-center font-heading font-bold">HV</div>
+            <span class="font-heading font-extrabold text-hvnavy">Hyperverge</span>
+          </div>
+          <p class="mt-3 text-sm text-slate-600">AI‑powered, RBI‑compliant Video KYC for secure and delightful onboarding.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-6 text-sm">
+          <div>
+            <h4 class="font-semibold text-slate-700">Company</h4>
+            <ul class="mt-2 space-y-2">
+              <li><a class="hover:text-hvblue" href="#/about-us">About</a></li>
+              <li><a class="hover:text-hvblue" href="#/resources">Resources</a></li>
+              <li><a class="hover:text-hvblue" href="#/contact">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-slate-700">Product</h4>
+            <ul class="mt-2 space-y-2">
+              <li><a class="hover:text-hvblue" href="#/how-it-works">How it Works</a></li>
+              <li><a class="hover:text-hvblue" href="#/features">Features</a></li>
+              <li><a class="hover:text-hvblue" href="#/request-demo">Request a Demo</a></li>
+            </ul>
+          </div>
+        </div>
+        <form id="miniDemo" class="bg-hvbg p-4 rounded-xl grid gap-3 text-sm" novalidate>
+          <h4 class="font-semibold text-slate-700">Request a quick callback</h4>
+          <div class="grid grid-cols-2 gap-2">
+            <input name="name" required class="rounded-lg border px-3 py-2" placeholder="Name" />
+            <input name="phone" required class="rounded-lg border px-3 py-2" placeholder="Phone" />
+          </div>
+          <button class="justify-self-start px-4 py-2 rounded-lg bg-hvblue text-white">Submit</button>
+          <p id="miniStatus" class="text-xs"></p>
+        </form>
+      </div>
+      <div class="mt-10 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-500">
+        <p>© <span id="year"></span> Hyperverge. All rights reserved.</p>
+        <div class="flex gap-3">
+          <span>Privacy</span>
+          <span>Terms</span>
+          <span>Security</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple hash router mapping
+    const routes = {
+      '#/': 'home',
+      '': 'home',
+      '#/how-it-works': 'how',
+      '#/features': 'features',
+      '#/industries': 'industries',
+      '#/resources': 'resources',
+      '#/about-us': 'about',
+      '#/contact': 'contact',
+      '#/request-demo': 'demo',
+    };
+
+    function renderRoute(){
+      const hash = window.location.hash;
+      const target = routes[hash] ?? 'home';
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.getElementById(target).classList.add('active');
+      // Close mobile menu on navigation
+      mobileMenu.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded','false');
+      // Move focus to top for a11y
+      document.querySelector('main').focus?.();
+    }
+
+    window.addEventListener('hashchange', renderRoute);
+    window.addEventListener('DOMContentLoaded', () => {
+      renderRoute();
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('hidden') ? 'false' : 'true';
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+
+    // Form handlers (client-side only; replace fetch URL with backend endpoint)
+    function handleForm(formId, statusId){
+      const form = document.getElementById(formId);
+      const status = document.getElementById(statusId);
+      form?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        status.textContent = '';
+        if(!form.checkValidity()){
+          status.textContent = 'Please complete required fields.';
+          status.className = 'text-sm text-red-600';
+          return;
+        }
+        const data = Object.fromEntries(new FormData(form).entries());
+        try{
+          // Example: POST to /api/lead (implement server)
+          // const res = await fetch('/api/lead', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({source: formId, ...data})});
+          // if(!res.ok) throw new Error('Network response was not ok');
+          // const msg = await res.text();
+          const msg = 'Thanks! Our team will reach out shortly.'; // demo only
+          status.textContent = msg;
+          status.className = 'text-sm text-green-700';
+          form.reset();
+        }catch(err){
+          status.textContent = 'Something went wrong. Please try again or email sales@hyperverge.co';
+          status.className = 'text-sm text-red-600';
+        }
+      });
+    }
+    handleForm('contactForm','contactStatus');
+    handleForm('demoForm','demoStatus');
+    handleForm('miniDemo','miniStatus');
+
+    // Analytics placeholder (hook your GA tag here)
+    window.hvAnalytics = {
+      track: (event, payload={}) => console.log('[Analytics]', event, payload)
+    };
+    document.querySelectorAll('a[href^="#/request-demo"]').forEach(a=>{
+      a.addEventListener('click',()=>window.hvAnalytics.track('cta_click',{cta:'request_demo'}))
+    });
+  </script>
+
+  <!-- ==========================================================
+    CONTENT PLAN (text-only) — For SEO & alignment
+    ----------------------------------------------------------
+    HOMEPAGE (/)
+    H1: The Future of Secure and Seamless Customer Onboarding is Here: Video KYC by Hyperverge
+    Sub: Onboard customers in minutes... RBI-compliant, AI-powered...
+    CTAs: Request a Demo (primary), Learn More (secondary)
+    Why Choose: Security & Compliance | Efficiency & Cost Reduction | Customer Experience
+    Trust: Client logos, badges, testimonial snippet
+    Final CTA: Get Started Today
+
+    HOW IT WORKS (/how-it-works)
+    H1: Our Simple 4-Step Video KYC Process
+    Steps: Pre-qualification | Smart Queuing | The Video Call | Post-call Analytics
+
+    FEATURES (/features)
+    H1: Powered by Cutting-Edge Technology
+    Columns: AI & ML (Liveness, Face Match~99%, OCR), Seamless Integration (APIs/SDKs, uptime, support)
+    Trust Signals: Compliance badges, testimonials, client logos
+
+    INDUSTRIES (/industries)
+    H1: Built for Regulated Industries
+    Banking | Fintech & NBFC (tailored benefit copy)
+
+    ABOUT US (/about-us)
+    Mission/vision paragraph focused on trust, speed, compliance at scale.
+
+    RESOURCES (/resources)
+    Webinar embed, case study PDF, blog post cards
+
+    CONTACT (/contact)
+    Form fields: Name, Company, Email, Phone, Industry, Message
+
+    REQUEST DEMO (/request-demo)
+    Expanded lead form with Preferred Time and SLA promise
+
+    SEO KEYWORDS (sprinkled naturally):
+    video kyc, rbi compliant kyc, kyc compliance, ai kyc, liveness detection, face match, fintech onboarding, digital onboarding, fraud detection, ekyc, kyc solution for banks
+  =========================================================== -->
+
+  <!-- ==========================================================
+    IMAGE SUGGESTIONS / PROMPTS
+    ----------------------------------------------------------
+    Hero: "Professional agent on a video call with a smiling customer; subtle overlay of shield/lock/dataflow icons; modern office; shallow depth of field"
+    Tech/AI: "Abstract neural network lines forming a shield; dark navy background with electric blue accents"
+    Compliance: "Minimal badge icons for RBI/ISO/DPDP on clean light background"
+    Industries: "Bank branch UI, mobile banking app screens; fintech office team collaborating"
+    Avoid generic stock; aim for aspirational, tech-forward visuals.
+  =========================================================== -->
+
+  <!-- ==========================================================
+    DEPLOYMENT & MANAGEMENT NOTES
+    ----------------------------------------------------------
+    • This file is a zero-dependency SPA using Tailwind CDN. For production:
+      1) Move to a framework (Next.js/Vite) or precompile Tailwind for performance.
+      2) Replace CDN with compiled CSS (Purged) to keep CSS <10KB.
+      3) Add <link rel="canonical"> per route if using SSR; otherwise keep SPA and map hashes.
+      4) Wire forms to a backend: POST /api/lead (Node, Python, or serverless). Validate server-side and send email to sales.
+      5) Add security headers (CSP, X-Frame-Options), serve over HTTPS.
+      6) Add Google Analytics (gtag) in <head> and track key events (CTA clicks, form submits).
+      7) Replace webinar iframe src with your YouTube URL; upload case study PDFs and link.
+      8) Configure sitemap.xml and robots.txt. Add OpenGraph/Twitter meta tags.
+
+    • Quick hosting:
+      - GitHub Pages / Netlify / Vercel: drop this index.html in a repo and deploy.
+      - For hash routes, no server rewrites needed. If you migrate to clean paths, add rewrite rules.
+  =========================================================== -->
+</body>
+</html>

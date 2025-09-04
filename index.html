@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <!-- Tailwind via CDN for rapid prototyping; swap to compiled CSS in production -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -48,7 +47,6 @@
   </style>
 </head>
 <body class="bg-hvbg text-slate-800 font-body">
-  <!-- Header -->
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
@@ -83,11 +81,8 @@
     </div>
   </header>
 
-  <!-- Screens (Hash Router) -->
   <main class="min-h-[70vh]">
-    <!-- HOME / Landing -->
     <section id="home" class="screen active">
-      <!-- Hero -->
       <div class="bg-gradient-to-b from-white to-hvbg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-10 items-center">
           <div class="fade-in">
@@ -104,10 +99,8 @@
             </div>
           </div>
           <div class="fade-in lg:delay-100">
-            <!-- Hero image placeholder -->
             <div class="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-soft bg-[url('https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=1400&auto=format&fit=crop')] bg-cover bg-center">
               <div class="absolute inset-0 bg-gradient-to-tr from-hvnavy/60 via-hvnavy/20 to-transparent"></div>
-              <!-- subtle security icons -->
               <div class="absolute bottom-4 left-4 right-4 grid grid-cols-3 gap-3">
                 <div class="backdrop-blur bg-white/30 rounded-xl p-3 text-white">🔒 Secure</div>
                 <div class="backdrop-blur bg-white/30 rounded-xl p-3 text-white">🛡️ Compliant</div>
@@ -118,7 +111,6 @@
         </div>
       </div>
 
-      <!-- Why Choose -->
       <section class="py-12 lg:py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 class="font-heading text-2xl sm:text-3xl font-bold text-hvnavy">Why Choose Hyperverge for Video KYC?</h2>
@@ -154,22 +146,20 @@
         </div>
       </section>
 
-      <!-- Logos / Trust -->
       <section class="py-8 bg-white border-y border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p class="text-center text-slate-500">Trusted by leading financial institutions</p>
-          <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-center opacity-80">
-            <div class="h-10 bg-slate-100 rounded" aria-label="Client logo placeholder"></div>
-            <div class="h-10 bg-slate-100 rounded"></div>
-            <div class="h-10 bg-slate-100 rounded"></div>
-            <div class="h-10 bg-slate-100 rounded"></div>
-            <div class="h-10 bg-slate-100 rounded"></div>
-            <div class="h-10 bg-slate-100 rounded"></div>
+          <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-8 gap-y-4 items-center justify-items-center text-slate-400">
+            <img class="h-8 w-auto transition hover:text-slate-600" src="data:image/svg+xml,%3Csvg viewBox='0 0 120 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='10' y='28' font-family='-apple-system, sans-serif' font-size='20' font-weight='bold' fill='currentColor'%3EFINBANK%3C/text%3E%3C/svg%3E" alt="FinBank Logo">
+            <img class="h-9 w-auto transition hover:text-slate-600" src="data:image/svg+xml,%3Csvg viewBox='0 0 120 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='currentColor'%3E%3Cpath d='M20 30 L20 10 L25 10 L25 30 Z M40 30 L40 15 L45 15 L45 30 Z M60 30 L60 20 L65 20 L65 30 Z' /%3E%3Ctext x='70' y='28' font-family='-apple-system, sans-serif' font-size='18' font-weight='600' fill='currentColor'%3ECAPITAL%3C/text%3E%3C/g%3E%3C/svg%3E" alt="CapitalCo Logo">
+            <img class="h-8 w-auto transition hover:text-slate-600" src="data:image/svg+xml,%3Csvg viewBox='0 0 140 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='28' font-family='Georgia, serif' font-style='italic' font-size='22' font-weight='500' fill='currentColor'%3ESecureTrust%3C/text%3E%3C/svg%3E" alt="SecureTrust Logo">
+            <img class="h-10 w-auto transition hover:text-slate-600" src="data:image/svg+xml,%3Csvg viewBox='0 0 120 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='currentColor' stroke-width='3'%3E%3Ccircle cx='20' cy='20' r='15'/%3E%3Ccircle cx='55' cy='20' r='10'/%3E%3C/g%3E%3Ctext x='70' y='28' font-family='-apple-system, sans-serif' font-size='16' font-weight='bold' fill='currentColor'%3ENEXTGEN%3C/text%3E%3C/svg%3E" alt="NextGen Bank Logo">
+            <img class="h-8 w-auto transition hover:text-slate-600" src="data:image/svg+xml,%3Csvg viewBox='0 0 120 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='15' y='28' font-family='Helvetica, sans-serif' font-size='24' font-weight='500' fill='currentColor' letter-spacing='2'%3ELENDWISE%3C/text%3E%3C/svg%3E" alt="LendWise Logo">
+            <img class="h-9 w-auto transition hover:text-slate-600" src="data:image/svg+xml,%3Csvg viewBox='0 0 100 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='currentColor'%3E%3Cpath d='M10 30 L25 10 L40 30 Z M35 22 L45 22 L50 15 L55 22 L65 22 L50 30 Z'/%3E%3Ctext x='70' y='28' font-family='-apple-system, sans-serif' font-size='20' font-weight='bold' fill='currentColor'%3EAPEX%3C/text%3E%3C/g%3E%3C/svg%3E" alt="Apex Finance Logo">
           </div>
         </div>
       </section>
 
-      <!-- Final CTA -->
       <section class="py-12 lg:py-20">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 class="font-heading text-2xl sm:text-3xl font-bold text-hvnavy">Ready to Revolutionize Your Onboarding Process?</h2>
@@ -179,7 +169,6 @@
       </section>
     </section>
 
-    <!-- HOW IT WORKS -->
     <section id="how" class="screen">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
         <h1 class="font-heading text-3xl font-extrabold text-hvnavy">Our Simple 4‑Step Video KYC Process</h1>
@@ -211,7 +200,6 @@
       </div>
     </section>
 
-    <!-- FEATURES -->
     <section id="features" class="screen">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
         <h1 class="font-heading text-3xl font-extrabold text-hvnavy">Powered by Cutting‑Edge Technology</h1>
@@ -260,7 +248,6 @@
       </div>
     </section>
 
-    <!-- INDUSTRIES -->
     <section id="industries" class="screen">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
         <h1 class="font-heading text-3xl font-extrabold text-hvnavy">Built for Regulated Industries</h1>
@@ -277,7 +264,6 @@
       </div>
     </section>
 
-    <!-- RESOURCES -->
     <section id="resources" class="screen">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
         <h1 class="font-heading text-3xl font-extrabold text-hvnavy">Resources</h1>
@@ -285,7 +271,6 @@
           <article class="bg-white rounded-2xl p-6 shadow-soft">
             <h3 class="font-heading font-semibold">Webinar: Building RBI‑Compliant Video KYC</h3>
             <div class="mt-3 aspect-video rounded-xl overflow-hidden">
-              <!-- Replace src with the provided YouTube video URL -->
               <iframe class="w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video KYC Webinar" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
           </article>
@@ -303,7 +288,6 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about" class="screen">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
         <h1 class="font-heading text-3xl font-extrabold text-hvnavy">About Hyperverge</h1>
@@ -311,7 +295,6 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="screen">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
         <h1 class="font-heading text-3xl font-extrabold text-hvnavy">Contact Us</h1>
@@ -361,7 +344,6 @@
       </div>
     </section>
 
-    <!-- REQUEST DEMO -->
     <section id="demo" class="screen">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
         <h1 class="font-heading text-3xl font-extrabold text-hvnavy">Request a Demo</h1>
@@ -547,5 +529,6 @@
       a.addEventListener('click',()=>window.hvAnalytics.track('cta_click',{cta:'request_demo'}))
     });
   </script>
+
   </body>
 </html>
